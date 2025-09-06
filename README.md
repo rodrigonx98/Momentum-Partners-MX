@@ -1,4 +1,4 @@
-# ConsultPro - Landing Page y Cotizador
+# momentumpartnersmx - Landing Page y Cotizador
 
 Una página web profesional para servicios de consultoría con landing page y sistema de cotización integrado.
 
@@ -97,7 +97,7 @@ Los colores principales están definidos en CSS:
 
 ### Logos e Imágenes
 
-- Reemplaza el texto "ConsultPro" con tu logo
+- Reemplaza el texto "momentumpartnersmx" con tu logo
 - Agrega imágenes en la sección Hero si lo deseas
 
 ## 📱 Responsive Design
