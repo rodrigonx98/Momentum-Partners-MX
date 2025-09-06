@@ -1,0 +1,16 @@
+{
+  "name": "consultoria-postits",
+  "version": "1.0.0",
+  "description": "Aplicación de servicios de consultoría con diseño de post-its",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "python3 -m http.server 8000",
+    "serve": "http-server -p 8000 -o"
+  },
+  "keywords": ["consultoria", "servicios", "postits", "whatsapp"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+} 

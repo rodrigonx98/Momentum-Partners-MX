@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Cotización de Servicios - ConsultPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">ConsultPro</a>
+            <a href="index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Page Title -->
+        <div class="page-title">
+            <h1>Cotización de Servicios</h1>
+            <p>Selecciona los servicios que necesitas y obtén una cotización personalizada. Nuestros expertos te ayudarán a encontrar la mejor solución para tu negocio.</p>
+        </div>
+
+        <!-- Post-it Container -->
+        <div class="post-its-container">
+            <div class="post-it">
+                <!-- Post-it Header -->
+                <div class="post-it-header">
+                    <h3 class="post-it-title">Servicios Disponibles</h3>
+                    <p class="post-it-subtitle">Haz clic en los servicios que deseas incluir en tu cotización</p>
+                </div>
+
+                <!-- Checklist -->
+                <div class="checklist">
+                    <div class="checklist-item" data-price="50">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Análisis Estratégico</div>
+                                <div class="item-description">Evaluación completa de tu situación actual y desarrollo de estrategias personalizadas para el crecimiento empresarial.</div>
+                                <div class="item-price">$50</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-price="100">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Optimización de Procesos</div>
+                                <div class="item-description">Identificación y eliminación de cuellos de botella para mejorar la eficiencia operativa de tu empresa.</div>
+                                <div class="item-price">$100</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-price="150">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Planificación Estratégica</div>
+                                <div class="item-description">Desarrollo de planes de acción detallados para alcanzar tus objetivos empresariales a corto y largo plazo.</div>
+                                <div class="item-price">$150</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-price="200">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Implementación de Soluciones</div>
+                                <div class="item-description">Acompañamiento completo en la ejecución de las estrategias y soluciones desarrolladas para tu empresa.</div>
+                                <div class="item-price">$200</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-price="75">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Análisis de Datos</div>
+                                <div class="item-description">Transformación de datos en insights accionables para mejorar la toma de decisiones empresariales.</div>
+                                <div class="item-price">$75</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item" data-price="125">
+                        <div class="item-content">
+                            <div class="checkbox"></div>
+                            <div class="item-details">
+                                <div class="item-title">Consultoría Especializada</div>
+                                <div class="item-description">Servicios personalizados adaptados a las necesidades específicas de tu industria y mercado.</div>
+                                <div class="item-price">$125</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Section -->
+                <div class="total-section">
+                    <div class="total-label">Total de la Cotización</div>
+                    <div class="total-amount">$0</div>
+                </div>
+
+                <!-- WhatsApp Section -->
+                <div class="whatsapp-section">
+                    <button class="whatsapp-btn" id="whatsappBtn">
+                        <span class="whatsapp-icon">📱</span>
+                        <span class="btn-text">Enviar por WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
