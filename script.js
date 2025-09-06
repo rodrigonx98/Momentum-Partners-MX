@@ -80,7 +80,7 @@ class PostItManager {
       return;
     }
 
-    const phoneNumber = "4494612011";
+    const phoneNumber = "4492790351";
     let message =
       "Hola! Me interesa obtener una cotización para los siguientes servicios:\n\n";
 
@@ -115,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add loading animation
   document.body.style.opacity = "0";
   document.body.style.transition = "opacity 0.5s ease";
-
   window.addEventListener("load", function () {
     document.body.style.opacity = "1";
   });
