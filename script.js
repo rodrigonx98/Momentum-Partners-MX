@@ -82,21 +82,26 @@ class PostItManager {
 
     const phoneNumber = "4492790351";
     let message =
-      "Hola! Me interesa obtener una cotización para los siguientes servicios:\n\n";
+      "🚀 *Hola! Me interesa transformar mi organización con Momentum Partners MX*\n\n";
+    message += "He seleccionado los siguientes servicios:\n\n";
 
     this.selectedItems.forEach((item) => {
       const title = item.querySelector(".item-title").textContent;
       const price = item.querySelector(".item-price").textContent;
-      message += `• ${title}: ${price}\n`;
+      const duration = item.querySelector(".item-duration")?.textContent || "";
+      message += `✅ *${title}*\n`;
+      message += `💰 ${price} ${duration}\n\n`;
     });
 
-    message += `\n💰 Total: $${this.total}\n\n`;
+    message += `💵 *Inversión Total: $${this.total.toLocaleString()} MXN*\n\n`;
     message += `📅 Fecha: ${new Date().toLocaleDateString("es-ES")}\n`;
     message += `🕐 Hora: ${new Date().toLocaleTimeString("es-ES", {
       hour: "2-digit",
       minute: "2-digit",
     })}\n\n`;
-    message += "Espero tu respuesta. ¡Gracias!";
+    message +=
+      "🎯 *¿Podemos agendar una llamada para discutir los detalles y comenzar mi transformación organizacional?*\n\n";
+    message += "¡Espero tu respuesta! Gracias.";
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
