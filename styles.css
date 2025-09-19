@@ -6,24 +6,24 @@
 }
 
 :root {
-    --primary-color: #202731;
-    --primary-light: #495669;
-    --secondary-color: #D1B551;
-    --accent-color: #D1B551;
-    --text-primary: #202731;
-    --text-secondary: #495669;
-    --text-muted: #E1E1DC;
+    --primary-color: #3b444d;
+    --primary-light: #3b648d;
+    --secondary-color: #e2b900;
+    --accent-color: #e2b900;
+    --text-primary: #3b444d;
+    --text-secondary: #3b648d;
+    --text-muted: #ebebeb;
     --bg-primary: #ffffff;
-    --bg-secondary: #E1E1DC;
-    --bg-accent: #E1E1DC;
-    --border-color: #E1E1DC;
+    --bg-secondary: #ebebeb;
+    --bg-accent: #ebebeb;
+    --border-color: #ebebeb;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --gradient-primary: linear-gradient(135deg, #202731 0%, #495669 100%);
-    --gradient-secondary: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
-    --gradient-accent: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
+    --gradient-primary: linear-gradient(135deg, #3b444d 0%, #3b648d 100%);
+    --gradient-secondary: linear-gradient(135deg, #e2b900 0%, #d4a500 100%);
+    --gradient-accent: linear-gradient(135deg, #e2b900 0%, #d4a500 100%);
 }
 
 body {
@@ -44,7 +44,7 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,10 +55,11 @@ body {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
 }
 
 .logo {
@@ -74,6 +75,16 @@ body {
 }
 
 .logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 90px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
     transform: scale(1.05);
 }
 
@@ -215,8 +226,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(32, 39, 49, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(209, 181, 81, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(59, 68, 77, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(226, 185, 0, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -348,8 +359,8 @@ body {
 }
 
 .checklist-item.selected .checkbox {
-    background: linear-gradient(135deg, #495669 0%, #202731 100%);
-    border-color: #495669;
+    background: linear-gradient(135deg, #3b648d 0%, #3b444d 100%);
+    border-color: #3b648d;
 }
 
 .checklist-item.selected .checkbox::after {
@@ -401,13 +412,13 @@ body {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 12px;
-    background-color: rgba(209, 181, 81, 0.1);
-    border: 1px solid rgba(209, 181, 81, 0.2);
+    background-color: rgba(226, 185, 0, 0.1);
+    border: 1px solid rgba(226, 185, 0, 0.2);
 }
 
 /* Total Section */
 .total-section {
-    background: rgba(225, 225, 220, 0.8);
+    background: rgba(235, 235, 235, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -487,7 +498,7 @@ body {
 }
 
 .whatsapp-btn {
-    background: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
     color: white;
     border: none;
     padding: 1.5rem 3rem;
@@ -535,8 +546,11 @@ body {
     transform: translateY(-1px);
 }
 
-.whatsapp-icon {
-    font-size: 1.5rem;
+.whatsapp-btn i {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    margin-right: 0.5rem;
 }
 
 .btn-text {
@@ -644,8 +658,8 @@ body {
         align-items: center;
     }
     
-    .logo {
-        font-size: 1.5rem;
+    .logo-img {
+        height: 50px;
     }
 }
 

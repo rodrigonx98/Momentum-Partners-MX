@@ -14,7 +14,9 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <a href="index.html" class="logo">momentumpartnersmx</a>
+            <a href="index.html" class="logo">
+                <img src="images/logo1.png" alt="aña" class="logo-img">
+            </a>
             <a href="index.html" class="back-btn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
@@ -125,14 +127,19 @@
                 <!-- WhatsApp Section -->
                 <div class="whatsapp-section">
                     <button class="whatsapp-btn" id="whatsappBtn">
-                        <span class="whatsapp-icon">📱</span>
-                        <span class="btn-text">Enviar por WhatsApp</span>
+                        <i data-lucide="message-circle"></i>
+                        <span class="btn-text">Enviar cotización por WhatsApp</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html> 
