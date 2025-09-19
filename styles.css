@@ -6,31 +6,31 @@
 }
 
 :root {
-    --primary-color: #1e40af;
-    --primary-light: #3b82f6;
-    --secondary-color: #059669;
-    --accent-color: #f59e0b;
-    --text-primary: #0f172a;
-    --text-secondary: #64748b;
-    --text-muted: #94a3b8;
+    --primary-color: #202731;
+    --primary-light: #495669;
+    --secondary-color: #D1B551;
+    --accent-color: #D1B551;
+    --text-primary: #202731;
+    --text-secondary: #495669;
+    --text-muted: #E1E1DC;
     --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-accent: #f1f5f9;
-    --border-color: #e2e8f0;
+    --bg-secondary: #E1E1DC;
+    --bg-accent: #E1E1DC;
+    --border-color: #E1E1DC;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-    --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    --gradient-primary: linear-gradient(135deg, #202731 0%, #495669 100%);
+    --gradient-secondary: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
+    --gradient-accent: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
     font-size: 16px;
@@ -215,8 +215,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(32, 39, 49, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(209, 181, 81, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -288,8 +288,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.02) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.02) 0%, transparent 50%);
+        radial-gradient(circle at 10% 20%, rgba(32, 39, 49, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(209, 181, 81, 0.02) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -324,8 +324,8 @@ body {
 .checklist-item.selected::after {
     opacity: 1;
     background: 
-        radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 10% 20%, rgba(32, 39, 49, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(209, 181, 81, 0.05) 0%, transparent 50%);
 }
 
 .checklist-item.selected .item-title {
@@ -348,8 +348,8 @@ body {
 }
 
 .checklist-item.selected .checkbox {
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-    border-color: #3b82f6;
+    background: linear-gradient(135deg, #495669 0%, #202731 100%);
+    border-color: #495669;
 }
 
 .checklist-item.selected .checkbox::after {
@@ -401,13 +401,13 @@ body {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 12px;
-    background-color: rgba(5, 150, 105, 0.1);
-    border: 1px solid rgba(5, 150, 105, 0.2);
+    background-color: rgba(209, 181, 81, 0.1);
+    border: 1px solid rgba(209, 181, 81, 0.2);
 }
 
 /* Total Section */
 .total-section {
-    background: rgba(248, 250, 252, 0.8);
+    background: rgba(225, 225, 220, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -444,8 +444,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 30%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 30% 30%, rgba(209, 181, 81, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(184, 160, 71, 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -487,7 +487,7 @@ body {
 }
 
 .whatsapp-btn {
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #D1B551 0%, #B8A047 100%);
     color: white;
     border: none;
     padding: 1.5rem 3rem;

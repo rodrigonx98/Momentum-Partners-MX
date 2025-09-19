@@ -24,7 +24,7 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    --gradient-accent: linear-gradient(135deg, #efefef 0%, #fbbf24 100%);
 }
 
 html {

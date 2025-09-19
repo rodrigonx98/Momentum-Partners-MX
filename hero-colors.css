@@ -1,0 +1,30 @@
+/* CSS específico para colores del hero-title */
+body .hero .hero-container .hero-content .hero-title .word-calidad {
+    color: #D1B551 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #D1B551 !important;
+    text-shadow: none !important;
+    font-weight: inherit !important;
+}
+
+body .hero .hero-container .hero-content .hero-title .word-eficiencia {
+    color: #495669 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #495669 !important;
+    text-shadow: none !important;
+    font-weight: inherit !important;
+}
+
+body .hero .hero-container .hero-content .hero-title .word-agilidad {
+    color: #808080 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #808080 !important;
+    text-shadow: none !important;
+    font-weight: inherit !important;
+}
