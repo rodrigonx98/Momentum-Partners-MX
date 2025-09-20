@@ -20,6 +20,11 @@
                 <div class="nav-logo">
                     <img src="images/logo1.png" alt="momentumpartnersmx" class="logo-img" href="index.html">
                 </div>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-menu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
@@ -27,7 +32,7 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#fundadora">Fundadora</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li class="mobile-cta" style="display: none;">
+                    <li class="mobile-cta">
                         <a href="cotizacion.html" class="btn-primary">Cotizar Ahora</a>
                     </li>
                 </ul>
@@ -231,10 +236,12 @@
                         para lograr resultados que se traducen en dinero y tiempo ganado.
                     </p>
                     
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i data-lucide="clock"></i>
+                    <div class="distinctive-benefits-grid">
+                        <div class="distinctive-benefit-card">
+                            <div class="benefit-icon-wrapper">
+                                <div class="benefit-icon">
+                                    <i data-lucide="clock"></i>
+                                </div>
                             </div>
                             <div class="benefit-content">
                                 <h4>Certificaciones en la mitad del tiempo</h4>
@@ -242,9 +249,11 @@
                             </div>
                         </div>
                         
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i data-lucide="dollar-sign"></i>
+                        <div class="distinctive-benefit-card">
+                            <div class="benefit-icon-wrapper">
+                                <div class="benefit-icon">
+                                    <i data-lucide="dollar-sign"></i>
+                                </div>
                             </div>
                             <div class="benefit-content">
                                 <h4>Reducción de costos ocultos</h4>
@@ -252,9 +261,11 @@
                             </div>
                         </div>
                         
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i data-lucide="trending-up"></i>
+                        <div class="distinctive-benefit-card">
+                            <div class="benefit-icon-wrapper">
+                                <div class="benefit-icon">
+                                    <i data-lucide="trending-up"></i>
+                                </div>
                             </div>
                             <div class="benefit-content">
                                 <h4>Retorno más rápido</h4>
@@ -448,6 +459,34 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -460,6 +499,16 @@
                     });
                 }
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
