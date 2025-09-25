@@ -266,3 +266,119 @@ document.addEventListener("DOMContentLoaded", function () {
 // Preloader effect
 document.body.style.opacity = "0";
 document.body.style.transition = "opacity 0.5s ease";
+
+// Success Cases Carousel functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselTrack = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const indicators = document.querySelectorAll(".indicator");
+
+  if (!carouselTrack || !prevBtn || !nextBtn) return; // Exit if carousel elements don't exist
+
+  let currentSlide = 0;
+  const totalSlides = 4;
+  let autoPlayInterval;
+
+  // Counter animation function
+  function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(current);
+    }, 16);
+  }
+
+  // Animate counters when slide becomes active
+  function animateSlideCounters(slideIndex) {
+    const activeCard = carouselTrack.children[slideIndex];
+    const mainMetric = activeCard.querySelector(".metric-number");
+    const kpiNumbers = activeCard.querySelectorAll(".kpi-number");
+
+    // Animate main metric
+    if (mainMetric) {
+      const target = parseInt(mainMetric.getAttribute("data-target"));
+      animateCounter(mainMetric, target);
+    }
+
+    // Animate KPI numbers
+    kpiNumbers.forEach((kpi) => {
+      const target = parseInt(kpi.getAttribute("data-target"));
+      animateCounter(kpi, target);
+    });
+  }
+
+  function updateCarousel() {
+    const translateX = -currentSlide * 25; // 25% por slide
+    carouselTrack.style.transform = `translateX(${translateX}%)`;
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === currentSlide);
+    });
+
+    // Animate counters for the active slide
+    setTimeout(() => {
+      animateSlideCounters(currentSlide);
+    }, 300); // Delay to allow transition to complete
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Event listeners
+  nextBtn.addEventListener("click", () => {
+    stopAutoPlay();
+    nextSlide();
+    startAutoPlay();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    stopAutoPlay();
+    prevSlide();
+    startAutoPlay();
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      stopAutoPlay();
+      goToSlide(index);
+      startAutoPlay();
+    });
+  });
+
+  // Pause auto-play on hover
+  carouselTrack.addEventListener("mouseenter", stopAutoPlay);
+  carouselTrack.addEventListener("mouseleave", startAutoPlay);
+
+  // Initialize carousel
+  updateCarousel();
+  startAutoPlay();
+});
