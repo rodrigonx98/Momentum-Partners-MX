@@ -3375,8 +3375,7 @@ body.menu-open {
     }
     
     .carousel-btn {
-        width: 45px;
-        height: 45px;
+        display: none;
     }
     
     .carousel-btn i {
@@ -4288,8 +4287,7 @@ body.menu-open {
     }
     
     .carousel-btn {
-        width: 40px;
-        height: 40px;
+        display: none;
     }
     
     .carousel-btn i {
