@@ -390,6 +390,12 @@ section[id] {
     width: auto;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    max-width: 100%;
+    object-fit: contain;
+    aspect-ratio: auto;
 }
 
 .hero-logo-img:hover {
@@ -1321,6 +1327,7 @@ section[id] {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 2.5rem 2rem;
 }
 
 .service-card::before {
@@ -1413,6 +1420,91 @@ section[id] {
     line-height: 1.7;
     font-size: 1rem;
     text-align: center;
+}
+
+/* Estilo para la Solución Momentum */
+.service-card p strong {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #3b648d 0%, #4a7ca8 100%);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 12px rgba(59, 100, 141, 0.25);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover p strong {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 100, 141, 0.35);
+}
+
+/* Estilo para tarjetas como enlaces */
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.service-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-card-link h3 {
+    color: var(--text-primary);
+}
+
+.service-card-link:hover h3 {
+    color: var(--primary-light);
+}
+
+/* Botón Cotizar en tarjetas */
+.service-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #e2b900 0%, #d4a500 100%);
+    color: #3b444d;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(226, 185, 0, 0.25);
+}
+
+.service-card:hover .service-card-button {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(226, 185, 0, 0.35);
+}
+
+.service-card-button i {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-button i {
+    transform: translateX(4px);
+}
+
+/* Botón WhatsApp CTA */
+.btn-whatsapp-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.btn-whatsapp-cta:hover {
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
 .service-features {
@@ -3394,8 +3486,12 @@ body.menu-open {
     }
     
     .hero-logo-img {
-        height: 120px;
-        max-width: 200px;
+        height: auto;
+        width: 70%;
+        max-width: 250px;
+        min-width: 180px;
+        margin: 0 auto;
+        display: block;
     }
     
     .hero-graphic {
@@ -3919,8 +4015,12 @@ body.menu-open {
     }
     
     .hero-logo-img {
-        height: 100px;
-        max-width: 150px;
+        height: auto;
+        width: 75%;
+        max-width: 180px;
+        min-width: 140px;
+        margin: 0 auto;
+        display: block;
     }
     
     .btn-large {
@@ -4051,6 +4151,170 @@ body.menu-open {
         margin: 0 0.25rem;
     }
     
+    /* Success Cases - Mobile Improvements */
+    .success-cases {
+        padding: 60px 0;
+    }
+    
+    .carousel-container {
+        margin: 1.5rem auto 0;
+        padding: 0 0.5rem;
+        border-radius: 16px;
+    }
+    
+    .success-case-card {
+        padding: 1.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: 16px;
+    }
+    
+    .case-header {
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .sector-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .company-details h3 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    
+    .company-details p {
+        font-size: 0.75rem;
+    }
+    
+    .main-result {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .metric-number {
+        font-size: 2rem;
+    }
+    
+    .metric-symbol {
+        font-size: 1rem;
+    }
+    
+    .main-metric-label {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-section {
+        padding: 1rem;
+    }
+    
+    .testimonial-quote p {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+        line-height: 1.4;
+    }
+    
+    .quote-mark {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-author {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .author-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .avatar-initials {
+        font-size: 0.85rem;
+    }
+    
+    .author-info strong {
+        font-size: 0.85rem;
+    }
+    
+    .author-info span {
+        font-size: 0.7rem;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+    
+    .kpi-card {
+        padding: 0.75rem;
+    }
+    
+    .kpi-number {
+        font-size: 1.3rem;
+    }
+    
+    .kpi-label {
+        font-size: 0.65rem;
+    }
+    
+    .credibility-badge {
+        padding: 0.75rem;
+        gap: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .badge-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .badge-title {
+        font-size: 0.8rem;
+    }
+    
+    .badge-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .carousel-controls {
+        gap: 0.75rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn i {
+        font-size: 1rem;
+    }
+    
+    .carousel-indicators {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+    
+    .indicator {
+        padding: 0.5rem 0.5rem;
+        min-width: 50px;
+    }
+    
+    .indicator i {
+        font-size: 0.85rem;
+    }
+    
+    .indicator span {
+        font-size: 0.6rem;
+    }
+    
     .contact-info {
         padding: 0 0.75rem;
     }
@@ -4093,8 +4357,12 @@ body.menu-open {
     }
     
     .hero-logo-img {
-        height: 80px;
-        max-width: 120px;
+        height: auto;
+        width: 80%;
+        max-width: 200px;
+        min-width: 150px;
+        margin: 0 auto;
+        display: block;
     }
     
     .btn-large {

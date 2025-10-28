@@ -1,3 +1,123 @@
+// Base de datos de soluciones y niveles
+const solucionesData = {
+  "cumplimiento-validacion": {
+    title: "Momentum de Cumplimiento y Confianza",
+    subtitle: "Cumplir con normas nacionales e internacionales",
+    niveles: [
+      {
+        nivel: "Ignite",
+        precio: "5,000 - 10,000",
+        descripcion:
+          "Implementación de acciones correctivas y evidencias básicas",
+      },
+      {
+        nivel: "Advanced",
+        precio: "18,000 - 40,000",
+        descripcion:
+          "Transformación por procesos, roadmap de cumplimiento, formación interna",
+      },
+      {
+        nivel: "360°",
+        precio: "40,000 - 120,000",
+        descripcion:
+          "Sistema de gestión completo hasta certificación/acreditación",
+      },
+    ],
+  },
+  "eficiencia-productividad": {
+    title: "Momentum de Eficiencia y Agilidad",
+    subtitle: "Aumentar la eficiencia operativa y productividad",
+    niveles: [
+      {
+        nivel: "Ignite",
+        precio: "3,000 - 8,000",
+        descripcion: "Auditoría y aplicación inmediata de mejoras en 1 proceso",
+      },
+      {
+        nivel: "Advanced",
+        precio: "15,000 - 35,000",
+        descripcion:
+          "Implementación Lean en procesos clave y tableros de control",
+      },
+      {
+        nivel: "360°",
+        precio: "35,000 - 90,000",
+        descripcion:
+          "Transformación operativa completa con cultura de eficiencia",
+      },
+    ],
+  },
+  "cumplimiento-trazabilidad": {
+    title: "Momentum de Cumplimiento y Confianza",
+    subtitle: "Evitar sanciones y garantizar trazabilidad",
+    niveles: [
+      {
+        nivel: "Ignite",
+        precio: "5,000 - 10,000",
+        descripcion:
+          "Implementación de acciones correctivas y evidencias básicas",
+      },
+      {
+        nivel: "Advanced",
+        precio: "18,000 - 40,000",
+        descripcion:
+          "Transformación por procesos, roadmap de cumplimiento, formación interna",
+      },
+      {
+        nivel: "360°",
+        precio: "40,000 - 120,000",
+        descripcion:
+          "Sistema de gestión completo hasta certificación/acreditación",
+      },
+    ],
+  },
+  "satisfaccion-servicio": {
+    title: "Momentum de Valor y Servicio",
+    subtitle: "Aumentar satisfacción, fidelización y calidad de servicio",
+    niveles: [
+      {
+        nivel: "Ignite",
+        precio: "3,500 - 7,000",
+        descripcion:
+          "Identificación de puntos críticos del servicio y aplicación de mejoras inmediatas",
+      },
+      {
+        nivel: "Advanced",
+        precio: "8,000 - 25,000",
+        descripcion:
+          "Mapeo de experiencia, rediseño de procesos y capacitación de atención",
+      },
+      {
+        nivel: "360°",
+        precio: "25,000 - 80,000",
+        descripcion: "Transformación cultural centrada en el usuario",
+      },
+    ],
+  },
+  "innovacion-transformacion": {
+    title: "Momentum de Innovación y Transformación",
+    subtitle: "Transformar mentalidades, liderazgo y mejora continua",
+    niveles: [
+      {
+        nivel: "Ignite",
+        precio: "5,000 - 9,000",
+        descripcion:
+          "Diagnóstico cultural y definición de acciones de impacto rápido",
+      },
+      {
+        nivel: "Advanced",
+        precio: "20,000 - 40,000",
+        descripcion: "Programas de liderazgo y OKRs para equipos clave",
+      },
+      {
+        nivel: "360°",
+        precio: "65,000 - 120,000",
+        descripcion: "Transformación institucional con cultura de calidad",
+      },
+    ],
+  },
+};
+
 class PostItManager {
   constructor() {
     this.total = 0;
@@ -6,13 +126,67 @@ class PostItManager {
   }
 
   init() {
-    this.checklistItems = document.querySelectorAll(".checklist-item");
+    // Obtener parámetro de solución de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const solucion = urlParams.get("solucion");
+
+    if (solucion && solucionesData[solucion]) {
+      this.loadSolution(solucion);
+    } else {
+      // Si no hay parámetro de solución, redirigir al index
+      window.location.href = "index.html";
+      return;
+    }
+
     this.totalAmount = document.querySelector(".total-amount");
     this.whatsappBtn = document.getElementById("whatsappBtn");
 
     this.addEventListeners();
     this.updateTotal();
     this.updateWhatsAppButton();
+  }
+
+  loadSolution(solucion) {
+    const data = solucionesData[solucion];
+
+    // Actualizar el título de la página
+    document.querySelector(".page-title h1").textContent = data.title;
+    document.querySelector(".page-title p").textContent = data.subtitle;
+
+    // Actualizar el título del post-it
+    document.querySelector(".post-it-title").textContent =
+      "Niveles de Solución";
+    document.querySelector(".post-it-subtitle").textContent =
+      "Selecciona el nivel que se adapte a tus necesidades";
+
+    // Generar los niveles
+    const checklist = document.querySelector(".checklist");
+    checklist.innerHTML = "";
+
+    data.niveles.forEach((nivelData, index) => {
+      const item = document.createElement("div");
+      item.className = "checklist-item nivel-item";
+      item.setAttribute(
+        "data-price",
+        nivelData.precio.split(" - ")[0].replace(",", "")
+      );
+      item.setAttribute("data-nivel", nivelData.nivel);
+
+      item.innerHTML = `
+        <div class="item-content">
+          <div class="checkbox"></div>
+          <div class="item-details">
+            <div class="item-nivel">${nivelData.nivel}</div>
+            <div class="item-description">${nivelData.descripcion}</div>
+            <div class="item-price">$${nivelData.precio} MXN</div>
+          </div>
+        </div>
+      `;
+
+      checklist.appendChild(item);
+    });
+
+    this.checklistItems = document.querySelectorAll(".checklist-item");
   }
 
   addEventListeners() {
@@ -27,7 +201,8 @@ class PostItManager {
 
   toggleSelection(item) {
     const isSelected = item.classList.contains("selected");
-    const price = parseInt(item.getAttribute("data-price"));
+    const priceAttr = item.getAttribute("data-price");
+    const price = priceAttr ? parseInt(priceAttr) : 0;
 
     if (isSelected) {
       item.classList.remove("selected");
@@ -47,7 +222,7 @@ class PostItManager {
 
   updateTotal() {
     if (this.totalAmount) {
-      this.totalAmount.textContent = `$${this.total}`;
+      this.totalAmount.textContent = `$${this.total.toLocaleString()}`;
       this.totalAmount.classList.add("animate");
 
       setTimeout(() => {
@@ -63,34 +238,39 @@ class PostItManager {
         this.whatsappBtn.style.opacity = "1";
         this.whatsappBtn.style.cursor = "pointer";
         this.whatsappBtn.querySelector(".btn-text").textContent =
-          "Enviar por WhatsApp";
+          "Enviar cotización por WhatsApp";
       } else {
         this.whatsappBtn.disabled = true;
         this.whatsappBtn.style.opacity = "0.6";
         this.whatsappBtn.style.cursor = "not-allowed";
         this.whatsappBtn.querySelector(".btn-text").textContent =
-          "Selecciona servicios";
+          "Selecciona un nivel";
       }
     }
   }
 
   sendWhatsApp() {
     if (this.selectedItems.length === 0) {
-      alert("Por favor selecciona al menos un servicio.");
+      alert("Por favor selecciona al menos un nivel.");
       return;
     }
 
     const phoneNumber = "4492790351";
     let message =
       "🚀 *Hola! Me interesa transformar mi organización con Momentum Partners MX*\n\n";
-    message += "He seleccionado los siguientes servicios:\n\n";
+    message += "He seleccionado los siguientes niveles:\n\n";
 
     this.selectedItems.forEach((item) => {
-      const title = item.querySelector(".item-title").textContent;
-      const price = item.querySelector(".item-price").textContent;
-      const duration = item.querySelector(".item-duration")?.textContent || "";
-      message += `✅ *${title}*\n`;
-      message += `💰 ${price} ${duration}\n\n`;
+      const nivel =
+        item.querySelector(".item-nivel")?.textContent ||
+        item.querySelector(".item-title")?.textContent;
+      const descripcion =
+        item.querySelector(".item-description")?.textContent || "";
+      const price = item.querySelector(".item-price")?.textContent || "";
+
+      message += `✅ *${nivel}*\n`;
+      message += `${descripcion}\n`;
+      message += `💰 ${price}\n\n`;
     });
 
     message += `💵 *Inversión Total: $${this.total.toLocaleString()} MXN*\n\n`;
