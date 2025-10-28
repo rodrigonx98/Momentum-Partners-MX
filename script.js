@@ -273,7 +273,6 @@ class PostItManager {
       message += `💰 ${price}\n\n`;
     });
 
-    message += `💵 *Inversión Total: $${this.total.toLocaleString()} MXN*\n\n`;
     message += `📅 Fecha: ${new Date().toLocaleDateString("es-ES")}\n`;
     message += `🕐 Hora: ${new Date().toLocaleTimeString("es-ES", {
       hour: "2-digit",
