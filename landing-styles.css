@@ -1367,15 +1367,20 @@ section[id] {
     align-items: center;
     justify-content: center;
     background: #ebebeb;
+    border: 3px solid #e2b900;
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
 }
 
-.service-icon i {
-    width: 3.5rem;
-    height: 3.5rem;
-    color: #3b444d;
+.service-icon i,
+.service-icon svg {
+    color: #e2b900;
+    stroke: #e2b900;
+}
+
+.service-icon svg path {
+    stroke: #e2b900;
 }
 
 .service-card:hover .service-icon {
@@ -1432,6 +1437,7 @@ section[id] {
     font-weight: 600;
     font-size: 0.9rem;
     margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
     box-shadow: 0 4px 12px rgba(59, 100, 141, 0.25);
     transition: all 0.3s ease;
 }
@@ -1467,8 +1473,8 @@ section[id] {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
+    margin-top: auto;
+    padding: 0.40rem 1.5rem;
     background: linear-gradient(135deg, #e2b900 0%, #d4a500 100%);
     color: #3b444d;
     border-radius: 12px;
@@ -3013,6 +3019,73 @@ section[id] {
 .footer-logo:hover {
     transform: scale(1.05);
     filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(226, 185, 0, 0.3));
+}
+
+.footer-social {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #495669;
+}
+
+.footer-social h4 {
+    color: #E1E1DC;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #e2b900;
+    transition: all 0.3s ease;
+    border: 2px solid #e2b900;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #e2b900 0%, #d4a500 100%);
+    color: #3b444d;
+    transform: translateY(-3px);
+    border-color: #e2b900;
+    box-shadow: 0 4px 12px rgba(226, 185, 0, 0.3);
+}
+
+.social-link i {
+    width: 20px;
+    height: 20px;
+    color: #e2b900;
+    stroke: #e2b900;
+}
+
+.social-link svg {
+    stroke: #e2b900;
+}
+
+.social-link svg path {
+    stroke: #e2b900;
+}
+
+.social-link:hover i {
+    color: #3b444d;
+}
+
+.social-link:hover svg {
+    stroke: #3b444d;
+}
+
+.social-link:hover svg path {
+    stroke: #3b444d;
 }
 
 .footer-bottom {
